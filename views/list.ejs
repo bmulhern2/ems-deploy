@@ -1,0 +1,26 @@
+<div role="main" class="container" style="width: 50%;">
+    <br><br/>
+    <% if(employee.length { %>
+        <h2>--Employee Listing ---</h2><br /><br />
+        <a href="/new">Add New</a>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Functions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% employees.forEach(function(entry) { %>
+                    <tr>
+                        <td><%= entry.name %></td>
+                        <td><a href="/view/<%= entry.name %>">VIEW</a></td>
+                    </tr>
+            </tbody>
+            <% }) %>
+        </table>
+        <% } else { %>
+        <a href="/new">Add one!</a>
+            <% } %>
+        <br/>
+</div>
